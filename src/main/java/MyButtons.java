@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 public class MyButtons extends JPanel {
 
-    private JButton NewGame, Ex;
     private MyPanel butr;
 
     public void SetObject(MyPanel butr) {
@@ -14,19 +13,19 @@ public class MyButtons extends JPanel {
 
     MyButtons() {
         setLayout(new FlowLayout());
-        NewGame = new JButton("Новая игра");
-        Ex = new JButton("Выход");
-        NewGame.addActionListener(new ActionListener() {
+        JButton newGame = new JButton("Новая игра");
+        JButton ex = new JButton("Выход");
+        newGame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 butr.Rese();
             }
         });
-        Ex.addActionListener(new ActionListener() {
+        ex.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 System.exit(0);
             }
         });
-        add(NewGame);
-        add(Ex);
+        add(newGame);
+        add(ex);
     }
 }
