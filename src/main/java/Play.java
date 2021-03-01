@@ -2,8 +2,8 @@ import javax.swing.*;
 
 public class Play {
 
-    private MyPanel Pan;
-    private int PlayBoard[][];
+    private final MyPanel Pan;
+    private final int[][] PlayBoard;
     public int k;
 
     Play(MyPanel B) {
