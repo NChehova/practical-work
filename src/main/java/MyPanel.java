@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class MyPanel extends JPanel implements ActionListener {
 
-    private JButton[] buttons;
+    private final JButton[] buttons;
     private Play GArray;
     private int PlayerMark = 1;
     private int DrawCheck = 0;
@@ -18,9 +18,9 @@ public class MyPanel extends JPanel implements ActionListener {
             buttons[i].setBackground(Color.YELLOW);
         }
         Rese();
-        for (int i=0; i < buttons.length; i++) {
-            add(buttons[i]);
-            buttons[i].addActionListener(this);
+        for (JButton button : buttons) {
+            add(button);
+            button.addActionListener(this);
         }
     }
 
@@ -54,14 +54,14 @@ public class MyPanel extends JPanel implements ActionListener {
     }
 
     public void AllButtons(boolean qq) {
-        for (int i = 0; i < buttons.length; i++) {
-            buttons[i].setEnabled(qq);
+        for (JButton button : buttons) {
+            button.setEnabled(qq);
         }
     }
 
     public void EmptyText() {
-        for (int i = 0; i < buttons.length; i++) {
-            buttons[i].setText("");
+        for (JButton button : buttons) {
+            button.setText("");
         }
     }
 
