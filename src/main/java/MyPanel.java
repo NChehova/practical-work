@@ -15,7 +15,7 @@ public class MyPanel extends JPanel implements ActionListener {
         buttons = new JButton[9];
         for (int i = 0; i < buttons.length; i++) {
             buttons[i] = new JButton("");
-            buttons[i].setBackground(Color.YELLOW);
+            buttons[i].setBackground(Color.BLACK);
         }
         Rese();
         for (JButton button : buttons) {
@@ -67,8 +67,10 @@ public class MyPanel extends JPanel implements ActionListener {
 
     public void MyText(JButton Btn, int Play) {
         if (Play == 2) {
+            Btn.setFont(new Font("TimesRoman", Font.PLAIN, 64));
             Btn.setText("O");
         } else if (Play == 1) {
+            Btn.setFont(new Font("TimesRoman", Font.PLAIN, 64));
             Btn.setText("X");
         }
     }
