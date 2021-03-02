@@ -5,10 +5,10 @@ import java.awt.event.ActionListener;
 
 public class MyButtons extends JPanel {
 
-    private MyPanel butr;
+    private MyPanel myPanel;
 
-    public void SetObject(MyPanel butr) {
-        this.butr = butr;
+    public void SetObject(MyPanel myPanel) {
+        this.myPanel = myPanel;
     }
 
     MyButtons() {
@@ -17,7 +17,7 @@ public class MyButtons extends JPanel {
         JButton ex = new JButton("Выход");
         newGame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                butr.Rese();
+                myPanel.Rese();
             }
         });
         ex.addActionListener(new ActionListener() {
