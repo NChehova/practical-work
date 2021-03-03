@@ -15,7 +15,7 @@ public class MyPanel extends JPanel implements ActionListener {
         buttons = new JButton[9];
         for (int i = 0; i < buttons.length; i++) {
             buttons[i] = new JButton("");
-            buttons[i].setBackground(Color.BLACK);
+            buttons[i].setBackground(Color.DARK_GRAY);
         }
         Rese();
         for (JButton button : buttons) {
