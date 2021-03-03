@@ -6,7 +6,7 @@ public class Game extends JFrame {
     Game() {
         setLayout(new BorderLayout());
         setVisible(true);
-        setSize(600, 600);
+        setSize(1200, 1000);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         MyPanel pa = new MyPanel();
         MyButtons ex_RES = new MyButtons();
