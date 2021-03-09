@@ -4,14 +4,29 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * класс для обработки кнопок
+ *
+ * @author Chehova
+ * @version 1.0.
+ * @copyright -
+ * @// TODO: 3/9/2021 дорабоать GUI кнопок
+ */
 public class MyButtons extends JPanel {
 
     private MyPanel myPanel;
 
+    /**
+     *
+     * @param myPanel панель содержащая игровое поле
+     */
     public void SetObject(MyPanel myPanel) {
         this.myPanel = myPanel;
     }
 
+    /**
+     * конструктор
+     */
     MyButtons() {
         setLayout(new FlowLayout());
         JButton newGame = new JButton("Новая игра");
@@ -32,6 +47,10 @@ public class MyButtons extends JPanel {
         add(exit, BorderLayout.CENTER);
     }
 
+    /**
+     *
+     * @param button обработка стиля кнопок
+     */
     private static void styleButton(JButton button) {
         button.setFont(new Font("Courier New", Font.BOLD, 17));
         button.setBackground(new Color(1f,0f,0f,.5f));

@@ -1,8 +1,19 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * класс для отображения игрого окна
+ *
+ * @author Chehova
+ * @version 1.0.
+ * @copyright -
+ * @// TODO: 3/9/2021 дорабоать GUI
+ */
 public class Game extends JFrame {
 
+    /**
+     * конструктор
+     */
     Game() {
         setLayout(new BorderLayout());
         styleFrame();
@@ -14,6 +25,9 @@ public class Game extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * GUI frame-а
+     */
     private void styleFrame() {
         dispose();
         setUndecorated(true);

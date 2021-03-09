@@ -3,6 +3,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * класс игровой панели \
+ *
+ * @author Chehova
+ * @version 1.0.
+ * @copyright -
+ * @// TODO: 3/9/2021 -
+ */
 public class MyPanel extends JPanel implements ActionListener {
 
     private final JButton[] buttons;
@@ -10,6 +18,9 @@ public class MyPanel extends JPanel implements ActionListener {
     private int PlayerMark = 1;
     private int DrawCheck = 0;
 
+    /**
+     * конструктор
+     */
     MyPanel() {
         setLayout(new GridLayout(3, 3));
         buttons = new JButton[9];
@@ -24,6 +35,11 @@ public class MyPanel extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Слушатель кнопок на панели
+     *
+     * @param e действие
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton Pressed = (JButton) e.getSource();
@@ -38,6 +54,11 @@ public class MyPanel extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * блокировка кнопки
+     *
+     * @param Btn экземпляр кнопки
+     */
     public void ButtonFalse(JButton Btn) {
         Btn.setEnabled(false);
     }
@@ -53,18 +74,32 @@ public class MyPanel extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * блокировка всех кнопок
+     *
+     * @param qq true = заблокировать, false = разблокировать
+     */
     public void AllButtons(boolean qq) {
         for (JButton button : buttons) {
             button.setEnabled(qq);
         }
     }
 
+    /**
+     * установка пустого текста в свойствах кнопки
+     */
     public void EmptyText() {
         for (JButton button : buttons) {
             button.setText("");
         }
     }
 
+    /**
+     * вывод x или о на кнопке в зависимости то номера игрока
+     *
+     * @param Btn выбранная кнопка
+     * @param Play номер игрока
+     */
     public void MyText(JButton Btn, int Play) {
         if (Play == 2) {
             Btn.setFont(new Font("TimesRoman", Font.PLAIN, 64));
@@ -75,6 +110,9 @@ public class MyPanel extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * установка дефолтных настроек панел
+     */
     public void Rese() {
         GArray = new Play(this);
         EmptyText();
