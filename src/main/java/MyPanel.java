@@ -33,7 +33,7 @@ public class MyPanel extends JPanel implements ActionListener {
                 GArray.InArray(button / 3, button % 3, PlayerMark, DrawCheck);
                 PlayerMark = SwithcPlayer(PlayerMark);
                 ButtonFalse(buttons[button]);
-                DrawCheck = DrawCheck+1;
+                DrawCheck = DrawCheck + 1;
             }
         }
     }
