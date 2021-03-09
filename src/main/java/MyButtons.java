@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,18 +15,28 @@ public class MyButtons extends JPanel {
     MyButtons() {
         setLayout(new FlowLayout());
         JButton newGame = new JButton("Новая игра");
-        JButton ex = new JButton("Выход");
+        JButton exit = new JButton("Выход");
+        styleButton(newGame);
+        styleButton(exit);
         newGame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 myPanel.Rese();
             }
         });
-        ex.addActionListener(new ActionListener() {
+        exit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 System.exit(0);
             }
         });
-        add(newGame);
-        add(ex);
+        add(newGame, BorderLayout.CENTER);
+        add(exit, BorderLayout.CENTER);
+    }
+
+    private static void styleButton(JButton button) {
+        button.setFont(new Font("Courier New", Font.BOLD, 17));
+        button.setBackground(new Color(1f,0f,0f,.5f));
+        button.setContentAreaFilled(false);
+        button.setFocusPainted(false);
+        button.setBorder(new LineBorder(Color.DARK_GRAY));
     }
 }
