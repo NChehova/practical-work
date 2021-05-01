@@ -14,9 +14,9 @@ import java.awt.event.ActionListener;
 public class MyPanel extends JPanel implements ActionListener {
 
     private final JButton[] buttons;
-    private Play GArray;
-    private int PlayerMark = 1;
-    private int DrawCheck = 0;
+    private Play play;
+    private int playerMark = 1;
+    private int drawCheck = 0;
 
     /**
      * конструктор
@@ -28,7 +28,7 @@ public class MyPanel extends JPanel implements ActionListener {
             buttons[i] = new JButton("");
             buttons[i].setBackground(Color.DARK_GRAY);
         }
-        Rese();
+        reset();
         for (JButton button : buttons) {
             add(button);
             button.addActionListener(this);
@@ -38,18 +38,18 @@ public class MyPanel extends JPanel implements ActionListener {
     /**
      * Слушатель кнопок на панели
      *
-     * @param e действие
+     * @param event действие
      */
     @Override
-    public void actionPerformed(ActionEvent e) {
-        JButton Pressed = (JButton) e.getSource();
-        for (int button = 0; button <= 8; button++) {
+    public void actionPerformed(ActionEvent event) {
+        JButton Pressed = (JButton) event.getSource();
+        for (int button = 0; button < 9; button++) {
             if (Pressed == buttons[button]) {
-                MyText(Pressed, PlayerMark);
-                GArray.InArray(button / 3, button % 3, PlayerMark, DrawCheck);
-                PlayerMark = SwithcPlayer(PlayerMark);
-                ButtonFalse(buttons[button]);
-                DrawCheck = DrawCheck + 1;
+                myText(Pressed, playerMark);
+                play.inArray(button / 3, button % 3, playerMark, drawCheck);
+                playerMark = switchPlayer(playerMark);
+                buttonFalse(buttons[button]);
+                drawCheck = drawCheck + 1;
             }
         }
     }
@@ -57,19 +57,23 @@ public class MyPanel extends JPanel implements ActionListener {
     /**
      * блокировка кнопки
      *
-     * @param Btn экземпляр кнопки
+     * @param button экземпляр кнопки
      */
-    public void ButtonFalse(JButton Btn) {
-        Btn.setEnabled(false);
+    public void buttonFalse(JButton button) {
+        button.setEnabled(false);
     }
 
-    public int SwithcPlayer(int last) {
-        if (last == 2) {
-            PlayerMark = 1;
+    /**
+     * изменить игрока
+     *
+     * @param prev предыдущий игрок
+     */
+    public int switchPlayer(int prev) {
+        if (prev == 2) {
+            playerMark = 1;
             return 1;
-
         } else {
-            PlayerMark = 2;
+            playerMark = 2;
             return 2;
         }
     }
@@ -77,18 +81,18 @@ public class MyPanel extends JPanel implements ActionListener {
     /**
      * блокировка всех кнопок
      *
-     * @param qq true = заблокировать, false = разблокировать
+     * @param enable true = заблокировать, false = разблокировать
      */
-    public void AllButtons(boolean qq) {
+    public void allButtons(boolean enable) {
         for (JButton button : buttons) {
-            button.setEnabled(qq);
+            button.setEnabled(enable);
         }
     }
 
     /**
      * установка пустого текста в свойствах кнопки
      */
-    public void EmptyText() {
+    public void emptyText() {
         for (JButton button : buttons) {
             button.setText("");
         }
@@ -97,27 +101,27 @@ public class MyPanel extends JPanel implements ActionListener {
     /**
      * вывод x или о на кнопке в зависимости то номера игрока
      *
-     * @param Btn выбранная кнопка
-     * @param Play номер игрока
+     * @param btn выбранная кнопка
+     * @param play номер игрока
      */
-    public void MyText(JButton Btn, int Play) {
-        if (Play == 2) {
-            Btn.setFont(new Font("TimesRoman", Font.PLAIN, 64));
-            Btn.setText("O");
-        } else if (Play == 1) {
-            Btn.setFont(new Font("TimesRoman", Font.PLAIN, 64));
-            Btn.setText("X");
+    public void myText(JButton btn, int play) {
+        if (play == 2) {
+            btn.setFont(new Font("TimesRoman", Font.PLAIN, 64));
+            btn.setText("O");
+        } else if (play == 1) {
+            btn.setFont(new Font("TimesRoman", Font.PLAIN, 64));
+            btn.setText("X");
         }
     }
 
     /**
      * установка дефолтных настроек панел
      */
-    public void Rese() {
-        GArray = new Play(this);
-        EmptyText();
-        AllButtons(true);
-        PlayerMark = 1;
-        DrawCheck = 0;
+    public void reset() {
+        play = new Play(this);
+        emptyText();
+        allButtons(true);
+        playerMark = 1;
+        drawCheck = 0;
     }
 }

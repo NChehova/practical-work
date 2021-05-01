@@ -20,7 +20,7 @@ public class MyButtons extends JPanel {
      *
      * @param myPanel панель содержащая игровое поле
      */
-    public void SetObject(MyPanel myPanel) {
+    public void setObject(MyPanel myPanel) {
         this.myPanel = myPanel;
     }
 
@@ -28,14 +28,14 @@ public class MyButtons extends JPanel {
      * конструктор
      */
     MyButtons() {
-        setLayout(new FlowLayout());
-        JButton newGame = new JButton("Новая игра");
-        JButton exit = new JButton("Выход");
+        setLayout(new GridLayout(0, 1, 10, 15));
+        JButton newGame = new JButton(" Новая игра ");
+        JButton exit = new JButton(" Выход ");
         styleButton(newGame);
         styleButton(exit);
         newGame.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
-                myPanel.Rese();
+                myPanel.reset();
             }
         });
         exit.addActionListener(new ActionListener() {
@@ -52,6 +52,7 @@ public class MyButtons extends JPanel {
      * @param button обработка стиля кнопок
      */
     private static void styleButton(JButton button) {
+        button.setPreferredSize(new Dimension(150, 50));
         button.setFont(new Font("Courier New", Font.BOLD, 17));
         button.setBackground(new Color(1f,0f,0f,.5f));
         button.setContentAreaFilled(false);
