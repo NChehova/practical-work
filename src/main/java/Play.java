@@ -44,43 +44,42 @@ public class Play {
     /**
      * поиск победителя
      *
-     * @param Check номер игрока
+     * @param check номер игрока
      * @param DrawCheck кол-вл выбранных ячеек
      */
-    public void ResultCheck(int Check, int DrawCheck) {
-        if ((PlayBoard[0][0] == Check && PlayBoard[0][1] == Check && PlayBoard[0][2] == Check) ||
-                (PlayBoard[1][0] == Check && PlayBoard[1][1] == Check && PlayBoard[1][2] == Check) ||
-                (PlayBoard[2][0] == Check && PlayBoard[2][1] == Check && PlayBoard[2][2] == Check)) {
-            if (Check == 1) {
+    public void ResultCheck(int check, int DrawCheck) {
+        if ((PlayBoard[0][0] == check && PlayBoard[0][1] == check && PlayBoard[0][2] == check) ||
+                (PlayBoard[1][0] == check && PlayBoard[1][1] == check && PlayBoard[1][2] == check) ||
+                (PlayBoard[2][0] == check && PlayBoard[2][1] == check && PlayBoard[2][2] == check)) {
+            if (check == 1) {
                 JOptionPane.showMessageDialog(Pan, "1 ИГРОК ЧЕМПИОН");
                 k = 1;
-            } else if (Check == 2) {
+            } else if (check == 2) {
                 JOptionPane.showMessageDialog(Pan, "2 ИГРОК ЧЕМПИОН");
                 k = 2;
             }
             Pan.AllButtons(false);
 
-        } else if ((PlayBoard[0][0] == Check && PlayBoard[1][0] == Check && PlayBoard[2][0] == Check) ||
-                (PlayBoard[0][1] == Check && PlayBoard[1][1] == Check && PlayBoard[2][1] == Check) ||
-                (PlayBoard[0][2] == Check && PlayBoard[1][2] == Check && PlayBoard[2][2] == Check)) {
-            if (Check == 1) {
+        } else if ((PlayBoard[0][0] == check && PlayBoard[1][0] == check && PlayBoard[2][0] == check) ||
+                (PlayBoard[0][1] == check && PlayBoard[1][1] == check && PlayBoard[2][1] == check) ||
+                (PlayBoard[0][2] == check && PlayBoard[1][2] == check && PlayBoard[2][2] == check)) {
+            if (check == 1) {
                 JOptionPane.showMessageDialog(Pan, "1 ИГРОК ЧЕМПИОН");
                 k = 1;
-            } else if (Check == 2) {
+            } else if (check == 2) {
                 JOptionPane.showMessageDialog(Pan, "2 ИГРОК ЧЕМПИОН");
                 k = 2;
             }
             Pan.AllButtons(false);
 
-        } else if ((PlayBoard[0][0] == Check && PlayBoard[1][1] == Check && PlayBoard[2][2] == Check) || (PlayBoard[2][0] == Check && PlayBoard[1][1] == Check && PlayBoard[0][2] == Check)) {
-            if (Check == 1) {
+        } else if ((PlayBoard[0][0] == check && PlayBoard[1][1] == check && PlayBoard[2][2] == check) ||
+                (PlayBoard[2][0] == check && PlayBoard[1][1] == check && PlayBoard[0][2] == check)) {
+            if (check == 1) {
                 JOptionPane.showMessageDialog(Pan, "1 ИГРОК ЧЕМПИОН");
                 k = 1;
-
-            } else if (Check == 2) {
+            } else if (check == 2) {
                 JOptionPane.showMessageDialog(Pan, "2 ИГРОК ЧЕМПИОН");
                 k = 2;
-
             }
             Pan.AllButtons(false);
 

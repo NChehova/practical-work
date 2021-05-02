@@ -14,9 +14,9 @@ import java.awt.event.ActionListener;
 public class MyPanel extends JPanel implements ActionListener {
 
     private final JButton[] buttons;
-    private Play GArray;
+    private Play gameArray;
     private int PlayerMark = 1;
-    private int DrawCheck = 0;
+    private int drawChecker = 0;
 
     /**
      * конструктор
@@ -28,7 +28,7 @@ public class MyPanel extends JPanel implements ActionListener {
             buttons[i] = new JButton("");
             buttons[i].setBackground(Color.DARK_GRAY);
         }
-        Rese();
+        refresh();
         for (JButton button : buttons) {
             add(button);
             button.addActionListener(this);
@@ -43,13 +43,13 @@ public class MyPanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton Pressed = (JButton) e.getSource();
-        for (int button = 0; button <= 8; button++) {
+        for (int button = 1; button <= 9; button++) {
             if (Pressed == buttons[button]) {
                 MyText(Pressed, PlayerMark);
-                GArray.InArray(button / 3, button % 3, PlayerMark, DrawCheck);
+                gameArray.InArray(button / 3, button % 3, PlayerMark, drawChecker);
                 PlayerMark = SwithcPlayer(PlayerMark);
                 ButtonFalse(buttons[button]);
-                DrawCheck = DrawCheck + 1;
+                drawChecker = drawChecker + 1;
             }
         }
     }
@@ -77,11 +77,11 @@ public class MyPanel extends JPanel implements ActionListener {
     /**
      * блокировка всех кнопок
      *
-     * @param qq true = заблокировать, false = разблокировать
+     * @param b true = заблокировать, false = разблокировать
      */
-    public void AllButtons(boolean qq) {
+    public void AllButtons(boolean b) {
         for (JButton button : buttons) {
-            button.setEnabled(qq);
+            button.setEnabled(b);
         }
     }
 
@@ -113,11 +113,11 @@ public class MyPanel extends JPanel implements ActionListener {
     /**
      * установка дефолтных настроек панел
      */
-    public void Rese() {
-        GArray = new Play(this);
+    public void refresh() {
+        gameArray = new Play(this);
         EmptyText();
         AllButtons(true);
         PlayerMark = 1;
-        DrawCheck = 0;
+        drawChecker = 0;
     }
 }
