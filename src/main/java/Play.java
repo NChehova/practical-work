@@ -10,8 +10,8 @@ import javax.swing.*;
  */
 public class Play {
 
-    private final MyPanel Pan;
-    private final int[][] PlayBoard;
+    private final MyPanel panel;
+    private final int[][] playBoard;
     public int k;
 
     /**
@@ -19,11 +19,11 @@ public class Play {
      * @param B игровая панель
      */
     Play(MyPanel B) {
-        PlayBoard = new int[3][3];
-        Pan = B;
+        playBoard = new int[3][3];
+        panel = B;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                PlayBoard[i][j] = 0;
+                playBoard[i][j] = 0;
             }
         }
     }
@@ -36,9 +36,9 @@ public class Play {
      * @param Check номер игрока
      * @param DrawCheck кол-вл выбранных ячеек
      */
-    public void InArray(int i, int j, int Check, int DrawCheck) {
-        PlayBoard[i][j] = Check;
-        ResultCheck(Check, DrawCheck);
+    public void inArray(int i, int j, int Check, int DrawCheck) {
+        playBoard[i][j] = Check;
+        resultCheck(Check, DrawCheck);
     }
 
     /**
@@ -47,45 +47,33 @@ public class Play {
      * @param check номер игрока
      * @param DrawCheck кол-вл выбранных ячеек
      */
-    public void ResultCheck(int check, int DrawCheck) {
-        if ((PlayBoard[0][0] == check && PlayBoard[0][1] == check && PlayBoard[0][2] == check) ||
-                (PlayBoard[1][0] == check && PlayBoard[1][1] == check && PlayBoard[1][2] == check) ||
-                (PlayBoard[2][0] == check && PlayBoard[2][1] == check && PlayBoard[2][2] == check)) {
-            if (check == 1) {
-                JOptionPane.showMessageDialog(Pan, "1 ИГРОК ЧЕМПИОН");
-                k = 1;
-            } else if (check == 2) {
-                JOptionPane.showMessageDialog(Pan, "2 ИГРОК ЧЕМПИОН");
-                k = 2;
-            }
-            Pan.AllButtons(false);
-
-        } else if ((PlayBoard[0][0] == check && PlayBoard[1][0] == check && PlayBoard[2][0] == check) ||
-                (PlayBoard[0][1] == check && PlayBoard[1][1] == check && PlayBoard[2][1] == check) ||
-                (PlayBoard[0][2] == check && PlayBoard[1][2] == check && PlayBoard[2][2] == check)) {
-            if (check == 1) {
-                JOptionPane.showMessageDialog(Pan, "1 ИГРОК ЧЕМПИОН");
-                k = 1;
-            } else if (check == 2) {
-                JOptionPane.showMessageDialog(Pan, "2 ИГРОК ЧЕМПИОН");
-                k = 2;
-            }
-            Pan.AllButtons(false);
-
-        } else if ((PlayBoard[0][0] == check && PlayBoard[1][1] == check && PlayBoard[2][2] == check) ||
-                (PlayBoard[2][0] == check && PlayBoard[1][1] == check && PlayBoard[0][2] == check)) {
-            if (check == 1) {
-                JOptionPane.showMessageDialog(Pan, "1 ИГРОК ЧЕМПИОН");
-                k = 1;
-            } else if (check == 2) {
-                JOptionPane.showMessageDialog(Pan, "2 ИГРОК ЧЕМПИОН");
-                k = 2;
-            }
-            Pan.AllButtons(false);
-
+    public void resultCheck(int check, int DrawCheck) {
+        if ((playBoard[0][0] == check && playBoard[0][1] == check && playBoard[0][2] == check) ||
+                (playBoard[1][0] == check && playBoard[1][1] == check && playBoard[1][2] == check) ||
+                (playBoard[2][0] == check && playBoard[2][1] == check && playBoard[2][2] == check)) {
+            showMessageDialogChampion(check);
+        } else if ((playBoard[0][0] == check && playBoard[1][0] == check && playBoard[2][0] == check) ||
+                (playBoard[0][1] == check && playBoard[1][1] == check && playBoard[2][1] == check) ||
+                (playBoard[0][2] == check && playBoard[1][2] == check && playBoard[2][2] == check)) {
+            showMessageDialogChampion(check);
+        } else if ((playBoard[0][0] == check && playBoard[1][1] == check && playBoard[2][2] == check) ||
+                (playBoard[2][0] == check && playBoard[1][1] == check && playBoard[0][2] == check)) {
+            showMessageDialogChampion(check);
         } else if (DrawCheck == 8) {
-            JOptionPane.showMessageDialog(Pan, "ПОБЕДИЛА ДРУЖБА");
+            JOptionPane.showMessageDialog(panel, "ПОБЕДИЛА ДРУЖБА");
             k = 3;
         }
+    }
+
+    private void showMessageDialogChampion(int Check) {
+        if (Check == 1) {
+            JOptionPane.showMessageDialog(panel, "1 ИГРОК ЧЕМПИОН");
+            k = 1;
+        } else if (Check == 2) {
+            JOptionPane.showMessageDialog(panel, "2 ИГРОК ЧЕМПИОН");
+            k = 2;
+        }
+        panel.allButtons(false);
+        panel.reset();
     }
 }

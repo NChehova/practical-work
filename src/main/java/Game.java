@@ -18,9 +18,13 @@ public class Game extends JFrame {
         setLayout(new BorderLayout());
         styleFrame();
         MyPanel myPanel = new MyPanel();
-        MyButtons ex_RES = new MyButtons();
-        ex_RES.SetObject(myPanel);
-        add(ex_RES, BorderLayout.EAST);
+        MyButtons buttons = new MyButtons();
+        buttons.setObject(myPanel);
+
+        JPanel flow = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        flow.add(buttons);
+
+        add(flow, BorderLayout.EAST);
         add(myPanel, BorderLayout.CENTER);
         setVisible(true);
     }
