@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.0/rng/docbook.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <title/>
+        <author>
+            <orgname>ChehovaCapital</orgname>
+            <address>
+<city>Москва</city>
+<street>Отрадное стрит</street>
+<country>Рашн Федерейшн</country></address>
+            <email>chhv.clb@gmail.com</email>
+        </author>
+    </info>
+    
+    <epigraph>
+        <para>
+            <emphasis>	Солнечный день радует глаз
+                и кто-то невидимый, взяв карандаш,
+                словно экскурсию в детство проводит —
+                крестики-нолики чертит в небе для нас.
+            </emphasis>
+        </para>
+    </epigraph>
+    
+    <sect1>
+        <title>	Абзац нумбер ван</title>
+        <para>	Забава крестики нолики - логическая игра между двумя противниками на квадратном поле 3 на 3 клетки или
+            бо́льшего размера (вплоть до «бесконечного поля»). Один из игроков играет «крестиками», второй —
+            «ноликами». В традиционной китайской игре (Гомоку) используются чёрные и белые камни.
+        </para>
+    </sect1>
+    
+    <sect1>
+        <title>	Абзац нумбер ту</title>
+        <para>	Правила игры</para>
+        <para>	Игроки по очереди ставят на свободные клетки поля 3х3 знаки (один всегда крестики, другой всегда
+            нолики). Первый, выстроивший в ряд 3 своих фигуры по вертикали, горизонтали или диагонали, выигрывает.
+            Первый ход делает игрок, ставящий крестики.
+        </para>
+        <para>	Обычно по завершении партии выигравшая сторона зачёркивает чертой свои три знака (нолика или
+            крестика), составляющих сплошной ряд.
+        </para>
+    </sect1>
+    
+    <sect1>
+        <title>	Абзац нумбер сри</title>
+        <para>	Первый юз кейс</para>
+        <para>	Определяем побееедителяяя</para>
+        <para>	Один из игроков волшебным способом или просто гениалным умом выстроил в ряд 3 своих символа, теперь он
+            считается победителем
+        </para>
+        <para>	Алгоритм определения победителя</para>
+        
+        <para> public void ResultCheck(int Check, int DrawCheck) {  </para>
+        <para>  if ((PlayBoard[0][0] == Check &amp;&amp; PlayBoard[0][1] == Check &amp;&amp; PlayBoard[0][2] == Check) ||  </para>
+        <para>          (PlayBoard[1][0] == Check &amp;&amp; PlayBoard[1][1] == Check &amp;&amp; PlayBoard[1][2] == Check) ||  </para>
+        <para>          (PlayBoard[2][0] == Check &amp;&amp; PlayBoard[2][1] == Check &amp;&amp; PlayBoard[2][2] == Check)) {  </para>
+        <para>       if (Check == 1) {  </para>        
+        <para>          JOptionPane.showMessageDialog(Pan, "1 ИГРОК ЧЕМПИОН");  </para>
+        <para>          k = 1;  </para>
+        <para>       } else if (Check == 2) {  </para>
+        <para>          JOptionPane.showMessageDialog(Pan, "2 ИГРОК ЧЕМПИОН");  </para>
+        <para>          k = 2;  </para>
+        <para>       }  </para>
+        <para>     Pan.AllButtons(false);  </para>
+        <para> } else if ((PlayBoard[0][0] == Check &amp;&amp; PlayBoard[1][0] == Check &amp;&amp; PlayBoard[2][0] == Check) ||  </para>        
+        <para>              (PlayBoard[0][1] == Check &amp;&amp; PlayBoard[1][1] == Check &amp;&amp; PlayBoard[2][1] == Check) ||  </para>
+        <para>              (PlayBoard[0][2] == Check &amp;&amp; PlayBoard[1][2] == Check &amp;&amp; PlayBoard[2][2] == Check)) {  </para>
+        <para>       if (Check == 1) {  </para>
+        <para>          JOptionPane.showMessageDialog(Pan, "2 ИГРОК ЧЕМПИОН");  </para>
+        <para>          k = 2;  </para>
+        <para>       }  </para>        
+        <para>     Pan.AllButtons(false);</para>
+        <para>          k = 1;  </para>
+        <para>       } else if (Check == 2) {  </para>
+        <para>          JOptionPane.showMessageDialog(Pan, "2 ИГРОК ЧЕМПИОН");  </para>
+        <para>          k = 2;  </para>
+        <para>       }  </para>
+        <para>     Pan.AllButtons(false);  </para>
+        <para> } else if ((PlayBoard[0][0] == Check &amp;&amp; PlayBoard[1][1] == Check &amp;&amp; PlayBoard[2][2] == Check) ||  </para>        
+        <para>               (PlayBoard[2][0] == Check &amp;&amp; PlayBoard[1][1] == Check &amp;&amp; PlayBoard[0][2] == Check)) {  </para>
+        <para>       if (Check == 1) {  </para>
+        <para>          JOptionPane.showMessageDialog(Pan, "1 ИГРОК ЧЕМПИОН");  </para>
+        <para>          k = 1;  </para>
+        <para>       } else if (Check == 2) {  </para>        
+        <para>          JOptionPane.showMessageDialog(Pan, "2 ИГРОК ЧЕМПИОН");</para>
+        <para>          k = 2;  </para>
+        <para>       } </para>
+        <para>          JOptionPane.showMessageDialog(Pan, "2 ИГРОК ЧЕМПИОН");  </para>
+        <para>          k = 2;  </para>
+        <para>       }  </para>
+        <para>     Pan.AllButtons(false);  </para>
+        <para> } else if (DrawCheck == 8) { </para> 
+        <para>      JOptionPane.showMessageDialog(Pan, "ПОБЕДИЛА ДРУЖБА");  </para>
+        <para>      k = 3; </para> 
+        <para> }  </para>
+        <para>}</para> 
+    </sect1>
+    
+    <sect1>
+        <title>	Абзац нумбер фор</title>
+        <para>	Второй юз кейс</para>
+        <para>	Обнуляемся</para>
+        <para>	Одной игрой партия не заканчивается, поэтому сушествует необходимость в обновалении поля</para>
+        <para>	Вешаем слушателя на кнопку, по активности, которой происходит сброс настроек до дефолтных</para>
+        
+        <para>newGame.addActionListener(new ActionListener() {</para>
+        <para>   public void actionPerformed(ActionEvent ae) {</para>
+        <para>    myPanel.Rese();</para>
+        <para> </para>
+        <para> </para>
+        <para> /**</para>
+        <para> * установка дефолтных настроек панел</para>
+        <para> */</para>
+        <para> public void Rese() {</para>
+        <para>   GArray = new Play(this);</para>
+        <para>   EmptyText();</para>
+        <para>   AllButtons(true);</para>
+        <para>   PlayerMark = 1;</para>
+        <para>   DrawCheck = 0;</para>
+        <para> }</para>
+    </sect1>
+    
+    <sect1>
+        <title>	Абзац нумбер файв</title>
+        <para>	Третий юз кейс</para>
+        <para>	Крестик, нолик</para>
+        <para>	Каждому игроку присваиется свой знак, одному крестик, друному нолик, которыми они играют на поле
+        </para>
+        <para>	Алгоритм вывода крестика или нолика</para>
+        
+        <para>/**</para>
+        <para>    * вывод x или о на кнопке в зависимости то номера игрока</para>
+        <para>    *</para>
+        <para>    * @param Btn выбранная кнопка</para>
+        <para>    * @param Play номер игрока</para>
+        <para>    */</para>
+        <para>    public void MyText(JButton Btn, int Play) {</para>
+        <para>    if (Play == 2) {</para>
+        <para>    Btn.setFont(new Font("TimesRoman", Font.PLAIN, 64));</para>
+        <para>    Btn.setText("O");</para>
+        <para>    } else if (Play == 1) {</para>
+        <para>    Btn.setFont(new Font("TimesRoman", Font.PLAIN, 64));</para>
+        <para>    Btn.setText("X");</para>
+        <para>    }</para>
+        <para>    }</para>
+    </sect1>
+</article>
